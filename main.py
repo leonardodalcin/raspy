@@ -3,9 +3,9 @@ import time
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(26, GPIO.OUT)
+GPIO.output(26, True)
 
-while True:
-    GPIO.output(26, True)
-    time.sleep(1)
-    GPIO.output(26, False)
-    time.sleep(1)
+# while True:
+#     time.sleep(1)
+#     GPIO.output(26, False)
+#     time.sleep(1)
