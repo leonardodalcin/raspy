@@ -7,7 +7,7 @@ in19 = GPIO.setup(19, GPIO.IN)
 GPIO.output(26, True)
 
 while 1:
-    print(GPIO.input(19))
+    print(in19.input)
     if GPIO.input(19):
         print("BUTTON PRESSED")
 
