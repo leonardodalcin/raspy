@@ -14,5 +14,6 @@ camera.capture(stream, format='jpeg')
 stream.seek(0)
 image = Image.open(stream)
 image.show()
+sleep(200)
 
 
