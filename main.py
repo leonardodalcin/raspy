@@ -11,4 +11,4 @@ while 1:
     if GPIO.input(19):
         print("BUTTON PRESSED")
 
-    time.sleep(0.2)
+    time.sleep(0.5)
