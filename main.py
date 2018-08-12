@@ -3,7 +3,7 @@ import time
 
 GPIO.setmode(GPIO.BCM)
 out26 = GPIO.setup(26, GPIO.OUT)
-in19 = GPIO.setup(19, GPIO.OUT)
+in19 = GPIO.setup(19, GPIO.IN)
 GPIO.output(26, True)
 
 while 1:
