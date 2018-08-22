@@ -1,7 +1,8 @@
 from io import BytesIO
 from picamera import PiCamera
-from PIL import Image
+from picamera.array import PiRGBArray
 import time
+import cv2
 
 class Camera:
 	__instance = None
@@ -9,11 +10,11 @@ class Camera:
 
 	def takePhoto(self):
 		# Create the in-memory stream
-		stream = BytesIO()
-		self.piCamera.capture(stream, format='jpeg')
-		# "Rewind" the stream to the beginning so we can read its content
-		stream.seek(0)
-		return Image.open(stream)
+		rawCapture = PiRGBArray(self.camera)
+		self.camera.capture(rawCapture, format="bgr")
+		image = rawCapture.array
+		cv2.imshow("Image", image)
+		cv2.waitKey(0)
 
 	@staticmethod
 	def getInstance():
@@ -33,7 +34,7 @@ class Camera:
 			print("Starting preview")
 			self.piCamera.start_preview()
 			print("Waiting 2 seconds for camera warmUp")
-			time.sleep(2)
+			time.sleep(0.1)
 			Camera.__instance = self
 
 
