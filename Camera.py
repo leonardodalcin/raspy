@@ -9,9 +9,8 @@ class Camera:
 	piCamera = None
 
 	def takePhoto(self):
-		# Create the in-memory stream
 		rawCapture = PiRGBArray(self.camera)
-		self.camera.capture(rawCapture, format="bgr")
+		self.piCamera.capture(rawCapture, format="bgr")
 		image = rawCapture.array
 		cv2.imshow("Image", image)
 		cv2.waitKey(0)
