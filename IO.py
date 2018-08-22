@@ -15,6 +15,7 @@ class Servo:
 		print("Initializing Servo on pin " + str(pin) + " with frequency " + str(PWMFrequency) + "Hz")
 		GPIO.setup(pin, GPIO.OUT)
 		self.pwm = GPIO.PWM(pin, PWMFrequency)
+		self.pwm.start(7.5)
 
 class IO:
 	__instance = None
