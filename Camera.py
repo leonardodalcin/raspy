@@ -1,6 +1,7 @@
 from io import BytesIO
 from picamera import PiCamera
 from PIL import Image
+import time
 
 class Camera:
 	__instance = None
@@ -31,6 +32,8 @@ class Camera:
 			self.piCamera = PiCamera()
 			print("Starting preview")
 			self.piCamera.start_preview()
+			print("Waiting 2 seconds for camera warmUp")
+			time.sleep(2)
 			Camera.__instance = self
 
 
