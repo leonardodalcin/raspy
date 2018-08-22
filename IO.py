@@ -8,6 +8,7 @@ class Servo:
 	pwm = None
 
 	def rotate(self, dutyCycle):
+		print("Rotating servo to duty cycle " + str(dutyCycle))
 		self.pwm.ChangeDutyCycle(dutyCycle)
 
 	def __init__(self, pin):
