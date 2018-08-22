@@ -28,8 +28,8 @@ class TiltServo:
 
 class IO:
 	__instance = None
-	panServo = PanServo()
-	tiltServo = TiltServo()
+	panServo = None
+	tiltServo = None
 
 	@staticmethod
 	def getInstance():
@@ -44,4 +44,6 @@ class IO:
 		else:
 			IO.__instance = self
 			GPIO.setmode(GPIO.BCM)
+			self.panServo = PanServo()
+			self.tiltServo = TiltServo()
 
