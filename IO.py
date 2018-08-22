@@ -4,27 +4,15 @@ PanServoPin = 18
 TiltServoPin = 23
 PWMFrequency = 50
 
-class PanServo:
+class Servo:
 	pwm = None
 
 	def rotate(self, dutyCycle):
 		self.pwm.ChangeDutyCycle(dutyCycle)
 
-	def __init__(self):
-		GPIO.setup(PanServoPin, GPIO.OUT)
-		pwm = GPIO.PWM(PanServoPin, PWMFrequency)
-
-class TiltServo:
-	pwm = None
-
-	def rotate(self, dutyCycle):
-		self.pwm.ChangeDutyCycle(dutyCycle)
-
-	def __init__(self):
-		GPIO.setup(TiltServoPin, GPIO.OUT)
-		pwm = GPIO.PWM(PanServoPin, PWMFrequency)
-
-
+	def __init__(self, pin):
+		GPIO.setup(pin, GPIO.OUT)
+		self.pwm = GPIO.PWM(pin, PWMFrequency)
 
 class IO:
 	__instance = None
@@ -42,8 +30,9 @@ class IO:
 		if IO.__instance != None:
 			raise Exception("This class is a singleton!")
 		else:
-			IO.__instance = self
 			GPIO.setmode(GPIO.BCM)
-			self.panServo = PanServo()
-			self.tiltServo = TiltServo()
+			self.panServo = Servo(PanServoPin)
+			self.tiltServo = Servo(TiltServoPin)
+			IO.__instance = self
+
 
