@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 PanServoPin = 18
 TiltServoPin = 23
 PWMFrequency = 50
-
+NeutralPWM = 7.5
 class Servo:
 	pwm = None
 
@@ -15,7 +15,7 @@ class Servo:
 		print("Initializing Servo on pin " + str(pin) + " with frequency " + str(PWMFrequency) + "Hz")
 		GPIO.setup(pin, GPIO.OUT)
 		self.pwm = GPIO.PWM(pin, PWMFrequency)
-		self.pwm.start(7.5)
+		self.pwm.start(NeutralPWM)
 
 class IO:
 	__instance = None
