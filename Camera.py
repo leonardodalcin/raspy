@@ -11,7 +11,7 @@ class Camera:
 	def takePhoto(self):
 		rawCapture = PiRGBArray(self.piCamera)
 		self.piCamera.capture(rawCapture, format="bgr")
-		image = rawCapture.array
+		return rawCapture.array
 
 	@staticmethod
 	def getInstance():
