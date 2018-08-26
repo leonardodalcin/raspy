@@ -12,8 +12,6 @@ class Camera:
 		rawCapture = PiRGBArray(self.piCamera)
 		self.piCamera.capture(rawCapture, format="bgr")
 		image = rawCapture.array
-		cv2.imshow("Image", image)
-		cv2.waitKey(0)
 
 	@staticmethod
 	def getInstance():
