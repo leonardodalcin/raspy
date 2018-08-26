@@ -32,8 +32,9 @@ class Camera:
 			self.piCamera = PiCamera()
 			print("Starting preview")
 			self.piCamera.start_preview()
-			print("Waiting 2 seconds for camera warmUp")
-			time.sleep(0.1)
+			print("Waiting 0.1 seconds for camera warm up")
+			while True:
+				#do nothing
 			Camera.__instance = self
 
 
