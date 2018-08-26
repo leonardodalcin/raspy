@@ -9,7 +9,7 @@ class Servo:
 
 	def rotate(self, dutyCycle):
 		print("Rotating servo to duty cycle " + str(dutyCycle))
-		self.pwm.ChangeDutyCycle(dutyCycle)
+		self.pwm.start(dutyCycle)
 		self.pwm.stop()
 
 	def __init__(self, pin):
