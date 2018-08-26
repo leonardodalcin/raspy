@@ -14,8 +14,11 @@ while True:
 	IO.panServo.rotate(12.5)
 	IO.tiltServo.rotate(12.5)
 	time.sleep(1)
-	IO.panServo.rotate(0)
-	IO.tiltServo.rotate(0)
+	IO.panServo.rotate(2)
+	IO.tiltServo.rotate(2)
+	time.sleep(1)
+	IO.panServo.rotate(7.5)
+	IO.tiltServo.rotate(7.5)
 	time.sleep(1)
 
 
