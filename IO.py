@@ -10,12 +10,14 @@ class Servo:
 	def rotate(self, dutyCycle):
 		print("Rotating servo to duty cycle " + str(dutyCycle))
 		self.pwm.ChangeDutyCycle(dutyCycle)
+		self.pwm.stop()
 
 	def __init__(self, pin):
 		print("Initializing Servo on pin " + str(pin) + " with frequency " + str(PWMFrequency) + "Hz")
 		GPIO.setup(pin, GPIO.OUT)
 		self.pwm = GPIO.PWM(pin, PWMFrequency)
 		self.pwm.start(NeutralPWM)
+		self.pwm.stop()
 
 class IO:
 	__instance = None
