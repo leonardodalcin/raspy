@@ -9,7 +9,7 @@ class Camera:
 	piCamera = None
 
 	def takePhoto(self):
-		rawCapture = PiRGBArray(self.camera)
+		rawCapture = PiRGBArray(self.picamera)
 		self.piCamera.capture(rawCapture, format="bgr")
 		image = rawCapture.array
 		cv2.imshow("Image", image)

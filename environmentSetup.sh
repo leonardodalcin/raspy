@@ -1,2 +1,5 @@
-conda install -c ericmjl picamera
-conda install -c conda-forge opencv
+python 2.7.10
+conda install -c gaiar picamera
+conda install -c poppy-project opencv3
+conda install pip
+conda install picamera
