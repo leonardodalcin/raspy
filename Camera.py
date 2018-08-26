@@ -31,7 +31,7 @@ class Camera:
 			print("Setting PiCamera wrapper")
 			self.piCamera = PiCamera()
 			print("Starting preview")
-			self.piCamera.start_preview()
+			self.piCamera.start_preview(fullscreen=False, window=(100, 20, 640, 480))
 			print("Waiting 0.1 seconds for camera warm up")
 			Camera.__instance = self
 			while True:
