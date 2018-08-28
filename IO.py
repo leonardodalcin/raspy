@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-
+import time
 PanServoPin = 18
 TiltServoPin = 23
 PWMFrequency = 50
@@ -12,6 +12,9 @@ class Servo:
 		print("Rotating servo to duty cycle " + str(dutyCycle))
 		self.pwm = GPIO.PWM(self.pin, PWMFrequency)
 		self.pwm.start(dutyCycle)
+		time.sleep(0.1)
+		self.pwm.stop()
+
 
 	def __init__(self, pin):
 		print("Initializing Servo on pin " + str(pin) + " with frequency " + str(PWMFrequency) + "Hz")
