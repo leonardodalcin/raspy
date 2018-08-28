@@ -17,11 +17,11 @@ class Camera:
 	def savePhoto(self, image):
 		print("Saving photo")
 		now = datetime.now()
-		dirName = now.strftime("%d-%m-$Y")
+		dirName = now.strftime("%d-%m-%Y")
 		fileName = now.strftime("%X")
 		if not os.path.exists(dirName):
 			os.makedirs(dirName)
-		cv2.imwrite(dirName + fileName + ".png", image)
+		cv2.imwrite(dirName + "/" + fileName + ".png", image)
 
 	def takePhoto(self):
 		rawCapture = PiRGBArray(self.piCamera)
