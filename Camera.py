@@ -10,6 +10,10 @@ class Camera:
 	__instance = None
 	piCamera = None
 	isPreviewing = False
+
+	def saveExamplePhoto(self):
+		self.savePhoto(self.takePhoto())
+
 	def savePhoto(self, image):
 		print("Saving photo")
 		now = datetime.now()
