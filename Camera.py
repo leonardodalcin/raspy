@@ -17,7 +17,7 @@ class Camera:
 	def savePhoto(self, image):
 		print("Saving photo")
 		now = datetime.now()
-		dirName = now.strftime("%x")
+		dirName = now.strftime("%d-%m-$Y")
 		fileName = now.strftime("%X")
 		if not os.path.exists(dirName):
 			os.makedirs(dirName)
