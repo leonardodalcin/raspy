@@ -12,7 +12,7 @@ class Servo:
 		print("Rotating servo to duty cycle " + str(dutyCycle))
 		self.pwm = GPIO.PWM(self.pin, PWMFrequency)
 		self.pwm.start(dutyCycle)
-		time.sleep(0.2)
+		time.sleep(0.3)
 		self.pwm.stop()
 
 	def __init__(self, pin):
