@@ -3,21 +3,21 @@ import RPi.GPIO as GPIO
 PanServoPin = 18
 TiltServoPin = 23
 PWMFrequency = 50
-NeutralPWM = 7.5
+InitialDutyCycle = 7.5
 class Servo:
 	pwm = None
+	pin = None
 
 	def rotate(self, dutyCycle):
 		print("Rotating servo to duty cycle " + str(dutyCycle))
+		self.pwm = GPIO.PWM(self.pin, PWMFrequency)
 		self.pwm.start(dutyCycle)
-		self.pwm.stop()
 
 	def __init__(self, pin):
 		print("Initializing Servo on pin " + str(pin) + " with frequency " + str(PWMFrequency) + "Hz")
-		GPIO.setup(pin, GPIO.OUT)
-		self.pwm = GPIO.PWM(pin, PWMFrequency)
-		self.pwm.start(NeutralPWM)
-		self.pwm.stop()
+		self.pin = pin
+		GPIO.setup(self.pin, GPIO.OUT)
+		self.rotate(InitialDutyCycle)
 
 class IO:
 	__instance = None
