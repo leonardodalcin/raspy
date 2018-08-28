@@ -2,8 +2,25 @@ import RPi.GPIO as GPIO
 import time
 PanServoPin = 18
 TiltServoPin = 23
+SumitomoPin = 19
 PWMFrequency = 50
 InitialDutyCycle = 7.5
+
+class Input:
+	function = None
+	pin = None
+	name = None
+	def __init__(self, pin, name, function):
+		print("Initializing Input Listener on pin " + str(pin) + " named: " + name)
+		self.pin = pin
+		self.name = name
+		GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+		def callbackFunction():
+			if GPIO.input(pin):  # and check again the input
+				function()
+		self.function = callbackFunction
+		GPIO.add_event_detect(pin, GPIO.RISING, callback=self.function, bouncetime=300)
+
 class Servo:
 	pwm = None
 	pin = None
@@ -32,6 +49,10 @@ class IO:
 		if IO.__instance == None:
 			IO()
 		return IO.__instance
+
+	def addEventListner(self, pin, name, function):
+		print("Adding event listener named " + name + " on pin " + str(pin))
+		return Input(pin,name,function)
 
 	def __init__(self):
 		print("Initializing IO")
