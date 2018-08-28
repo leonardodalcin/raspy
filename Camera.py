@@ -7,11 +7,21 @@ import cv2
 class Camera:
 	__instance = None
 	piCamera = None
+	isPreviewing = False
+	# def savePhoto(self, photo, path):
+
 
 	def takePhoto(self):
 		rawCapture = PiRGBArray(self.piCamera)
 		self.piCamera.capture(rawCapture, format="bgr")
 		return rawCapture.array
+
+	def togglePreview(self):
+		if self.isPreviewing:
+			self.piCamera.stop_preview()
+		else:
+			self.piCamera.start_preview(fullscreen=False, window=(100, 20, 640, 480))
+		self.isPreviewing = not self.isPreviewing
 
 	@staticmethod
 	def getInstance():
@@ -28,9 +38,7 @@ class Camera:
 		else:
 			print("Setting PiCamera wrapper")
 			self.piCamera = PiCamera()
-			print("Starting preview")
-			self.piCamera.start_preview(fullscreen=False, window=(100, 20, 640, 480))
-			print("Waiting 0.1 seconds for camera warm up")
+			self.piCamera.rotation = 180
 			Camera.__instance = self
 
 
