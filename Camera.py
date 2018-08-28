@@ -21,7 +21,7 @@ class Camera:
 		fileName = now.strftime("%X")
 		if not os.path.exists(dirName):
 			os.makedirs(dirName)
-		cv2.imwrite(image, dirName + fileName)
+		cv2.imwrite(dirName + fileName + ".png", image)
 
 	def takePhoto(self):
 		rawCapture = PiRGBArray(self.piCamera)
