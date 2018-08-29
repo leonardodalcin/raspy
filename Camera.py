@@ -1,27 +1,10 @@
-from io import BytesIO
 from picamera import PiCamera
 from picamera.array import PiRGBArray
-import time
-from datetime import datetime
-import cv2
-import os
 
 class Camera:
 	__instance = None
 	piCamera = None
 	isPreviewing = False
-
-	def saveExamplePhoto(self):
-		self.savePhoto(self.takePhoto())
-
-	def savePhoto(self, image):
-		print("Saving photo")
-		now = datetime.now()
-		dirName = now.strftime("%d-%m-%Y")
-		fileName = now.strftime("%X")
-		if not os.path.exists(dirName):
-			os.makedirs(dirName)
-		cv2.imwrite(dirName + "/" + fileName + ".png", image)
 
 	def takePhoto(self):
 		rawCapture = PiRGBArray(self.piCamera)

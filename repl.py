@@ -1,12 +1,16 @@
-# I'll be using Python 3, for reference.
+from IO import IO
+from Camera import Camera
+import code
 
-def custom_repl():
-    pie = "delicious"
-    pi = 3.14159
-    homonyms = (pie != pi)
+print("Beholder v0.0.1")
+print("Initializing IO")
+IO = IO()
+print("Initializing Camera")
+Camera = Camera()
+
+def repl(IO, Camera):
     code.interact(
-        banner="Beholder ",
         local=locals(),
     )
 
-custom_repl()
+repl(IO, Camera)
