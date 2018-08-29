@@ -14,7 +14,6 @@ Camera = Camera()
 print("Initializing external signal input")
 sumitomoInput= Input(19, "Sumitomo", Camera.takePhoto)
 while 1:
-    print(GPIO.input)
     if GPIO.input(19):
         print("BUTTON PRESSED")
         time.sleep(1)
