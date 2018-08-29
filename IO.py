@@ -34,13 +34,7 @@ class Input:
 		self.pin = pin
 		self.name = name
 		GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
-
-		def callbackFunction():
-			print("CalbackFunctionCalled")
-			if GPIO.input(pin):  # and check again the input
-				self.lastResult = function()
-
-		self.function = callbackFunction
+		self.function = function
 		GPIO.add_event_detect(pin, GPIO.RISING, callback=self.function, bouncetime=300)
 
 

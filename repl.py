@@ -6,15 +6,13 @@ import time
 import code
 
 print("Beholder v0.0.1")
-print("Initializing IO")
 IO = IO()
 
 def callbackFunctionTest():
     print("CALLING CALLBACK FUNCTION SINCE BUTTON IS PRESSED")
 
-print("Initializing Camera")
 Camera = Camera()
-print("Initializing external signal input")
+
 sumitomoInput= Input(24, "Sumitomo", callbackFunctionTest)
 
 
