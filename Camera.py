@@ -6,7 +6,17 @@ class Camera:
 	piCamera = None
 	isPreviewing = False
 
+	def save(self):
+		print("Saving photo")
+		now = datetime.now()
+		dirName = now.strftime("%d-%m-%Y")
+		fileName = now.strftime("%X")
+		if not os.path.exists(dirName):
+			os.makedirs(dirName)
+		cv2.imwrite(dirName + "/" + fileName + ".png", self.image)
+
 	def takePhoto(self):
+		print("Taking photo")
 		rawCapture = PiRGBArray(self.piCamera)
 		self.piCamera.capture(rawCapture, format="bgr")
 		return rawCapture.array

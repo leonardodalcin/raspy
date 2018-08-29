@@ -9,18 +9,18 @@ print("Beholder v0.0.1")
 print("Initializing IO")
 IO = IO()
 
+def callbackFunctionTest():
+    print("CALLING CALLBACK FUNCTION SINCE BUTTON IS PRESSED")
+
 print("Initializing Camera")
 Camera = Camera()
 print("Initializing external signal input")
-sumitomoInput= Input(24, "Sumitomo", Camera.takePhoto)
-while 1:
-    if GPIO.input(24):
-        print("BUTTON PRESSED")
-        time.sleep(1)
+sumitomoInput= Input(24, "Sumitomo", callbackFunctionTest)
 
-# def repl(IO, Camera, sumitomoInput):
-#     code.interact(
-#         local=locals(),
-#     )
-#
-# repl(IO, Camera, sumitomoInput)
+
+def repl(IO, Camera, sumitomoInput):
+    code.interact(
+        local=locals(),
+    )
+
+repl(IO, Camera, sumitomoInput)
