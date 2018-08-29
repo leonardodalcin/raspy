@@ -1,6 +1,7 @@
 from IO import IO
 from Camera import Camera
 from IO import Input
+import RPi.GPIO as GPIO
 import code
 
 print("Beholder v0.0.1")
