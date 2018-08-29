@@ -12,9 +12,9 @@ IO = IO()
 print("Initializing Camera")
 Camera = Camera()
 print("Initializing external signal input")
-sumitomoInput= Input(19, "Sumitomo", Camera.takePhoto)
+sumitomoInput= Input(24, "Sumitomo", Camera.takePhoto)
 while 1:
-    if GPIO.input(19):
+    if GPIO.input(24):
         print("BUTTON PRESSED")
         time.sleep(1)
 
