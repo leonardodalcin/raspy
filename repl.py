@@ -8,8 +8,8 @@ import code
 print("Beholder v0.0.1")
 IO = IO()
 
-def callbackFunctionTest():
-    print("CALLING CALLBACK FUNCTION SINCE BUTTON IS PRESSED")
+def callbackFunctionTest(channel):
+    print("CALLING CALLBACK FUNCTION SINCE BUTTON IS PRESSED CHANNEL " + str(channel))
 
 Camera = Camera()
 
