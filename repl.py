@@ -2,6 +2,7 @@ from IO import IO
 from Camera import Camera
 from IO import Input
 import RPi.GPIO as GPIO
+import time
 import code
 
 print("Beholder v0.0.1")
@@ -13,8 +14,11 @@ Camera = Camera()
 print("Initializing external signal input")
 sumitomoInput= Input(19, "Sumitomo", Camera.takePhoto)
 while 1:
+    print(GPIO.input)
     if GPIO.input(19):
         print("BUTTON PRESSED")
+        time.sleep(1)
+
 # def repl(IO, Camera, sumitomoInput):
 #     code.interact(
 #         local=locals(),
