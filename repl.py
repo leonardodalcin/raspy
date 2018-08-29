@@ -11,10 +11,12 @@ print("Initializing Camera")
 Camera = Camera()
 print("Initializing external signal input")
 sumitomoInput= Input(19, "Sumitomo", Camera.takePhoto)
-
-def repl(IO, Camera, sumitomoInput):
-    code.interact(
-        local=locals(),
-    )
-
-repl(IO, Camera, sumitomoInput)
+while 1:
+    if GPIO.input(19):
+        print("BUTTON PRESSED")
+# def repl(IO, Camera, sumitomoInput):
+#     code.interact(
+#         local=locals(),
+#     )
+#
+# repl(IO, Camera, sumitomoInput)

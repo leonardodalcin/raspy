@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 PanServoPin = 18
 TiltServoPin = 23
-SumitomoPin = 19
+SumitomoPin = 24
 PWMFrequency = 50
 InitialDutyCycle = 7.5
 
@@ -16,6 +16,7 @@ class Input:
 		self.name = name
 		GPIO.setup(pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 		def callbackFunction():
+			print("CalbackFunctionCalled")
 			if GPIO.input(pin):  # and check again the input
 				function()
 		self.function = callbackFunction
