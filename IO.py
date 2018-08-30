@@ -24,7 +24,7 @@ class OutputClock:
 		self.frequency = frequency
 		self.name = name
 		self.pwm = GPIO.PWM(self.pin, frequency)
-		self.pwm.start()
+		self.pwm.start(100)
 
 
 class Input:
