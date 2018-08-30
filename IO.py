@@ -20,6 +20,7 @@ class OutputClock:
 	def __init__(self, pin, name, frequency):
 		print("Initializing clock on pin " + str(pin) + " with output frequency of " + str(frequency) + "Hz")
 		self.pin = pin
+		GPIO.setup(self.pin, GPIO.OUT)
 		self.frequency = frequency
 		self.name = name
 		self.pwm = GPIO.PWM(self.pin, frequency)
