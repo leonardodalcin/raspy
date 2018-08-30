@@ -7,5 +7,5 @@ import cv2
 camera = PiCamera()
 rawCapture = PiRGBArray(camera)
 camera.capture(rawCapture, format="bgr")
-img = rawCapture.array()
+img = rawCapture.array
 cv2.imwrite("test.png", img)
