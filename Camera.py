@@ -35,7 +35,7 @@ class Camera:
 			raise Exception("This class is a singleton!")
 		else:
 			print("Setting PiCamera wrapper")
-			self.piCamera = PiCamera()
+			self.piCamera = PiCamera(resolution=(3280, 2464))
 			self.piCamera.rotation = 180
 			Camera.__instance = self
 
