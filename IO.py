@@ -84,4 +84,5 @@ class IO:
 			self.panServo = Servo(PanServoPin)
 			print("Creating tilt servo on pin " + str(TiltServoPin))
 			self.tiltServo = Servo(TiltServoPin)
+
 			IO.__instance = self

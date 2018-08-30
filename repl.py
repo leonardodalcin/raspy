@@ -7,7 +7,6 @@ import code
 print("Beholder v0.0.1")
 IO = IO()
 Camera = Camera()
-
 Image(Camera.takePhoto()).save()
 
 
@@ -16,12 +15,12 @@ def takePhoto(channel):
     Image(Camera.takePhoto()).save()
 
 
-sumitomoInput= Input(24, "Sumitomo", takePhoto)
 
+sumitomoInput= Input(24, "Sumitomo", takePhoto)
 
 def repl(IO, Camera):
     code.interact(
         local=locals(),
     )
 
-repl(IO, Camera, sumitomoInput)
+repl(IO, Camera)
