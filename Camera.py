@@ -1,5 +1,8 @@
 from picamera import PiCamera
 from picamera.array import PiRGBArray
+from datetime import datetime
+import cv2
+import os
 
 class Camera:
 	__instance = None
@@ -19,9 +22,12 @@ class Camera:
 		print("Taking photo")
 		rawCapture = PiRGBArray(self.piCamera)
 		self.piCamera.capture(rawCapture, format="bgr")
+		self.save(rawCapture.array)
 		return rawCapture.array
 
 	def togglePreview(self):
+		print("Toggling preview")
+
 		if self.isPreviewing:
 			self.piCamera.stop_preview()
 		else:

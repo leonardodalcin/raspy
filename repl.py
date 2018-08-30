@@ -19,7 +19,7 @@ def takePhoto(channel):
 sumitomoInput= Input(24, "Sumitomo", takePhoto)
 
 
-def repl(IO, Camera, sumitomoInput):
+def repl(IO, Camera):
     code.interact(
         local=locals(),
     )
