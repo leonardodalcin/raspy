@@ -16,7 +16,7 @@ def takePhoto(channel):
 
 
 sumitomoInput= Input(24, "Sumitomo", takePhoto)
-clockTestOutput= OutputClock(24, "Sumitomo", takePhoto)
+clockTestOutput= OutputClock(25, "Fake Signal", 1)
 
 def repl(IO, Camera):
     code.interact(

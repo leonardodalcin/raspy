@@ -17,7 +17,7 @@ class OutputClock:
 	def stop(self):
 		self.pwm.stop()
 
-	def __init__(self, pin, frequency, name):
+	def __init__(self, pin, name, frequency):
 		print("Initializing clock on pin " + str(pin) + " with output frequency of " + str(frequency) + "Hz")
 		self.pin = pin
 		self.frequency = frequency
