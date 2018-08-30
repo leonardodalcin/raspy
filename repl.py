@@ -1,6 +1,7 @@
 from IO import IO
 from Camera import Camera
 from IO import Input
+from IO import OutputClock
 from Image import Image
 import code
 
@@ -15,6 +16,7 @@ def takePhoto(channel):
 
 
 sumitomoInput= Input(24, "Sumitomo", takePhoto)
+clockTestOutput= OutputClock(24, "Sumitomo", takePhoto)
 
 def repl(IO, Camera):
     code.interact(
