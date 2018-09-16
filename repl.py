@@ -11,7 +11,9 @@ Camera = Camera()
 
 
 def takePhoto():
-	Image(Camera.takePhoto()).rotate(90).save()
+	img = Image(Camera.takePhoto())
+	img.rotate(90)
+	img.save()
 
 sumitomoInput = Input(24, "Sumitomo", takePhoto)
 clockTestOutput = OutputClock(25, "Fake Signal", 0.1)
