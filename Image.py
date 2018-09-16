@@ -1,9 +1,14 @@
 from datetime import datetime
+from matplotlib import pyplot as plt
 import cv2
 import os
 
 class Image:
 	image = None
+
+	def show(self):
+		plt.imshow(self.image, cmap="gray", interpolation='bicubic')
+		plt.show()
 
 	def save(self):
 		print("Saving photo")
@@ -20,13 +25,15 @@ class Image:
 									 thresholdType=cv2.THRESH_BINARY,
 									 blockSize=51,
 									 C=0)
+
 	def rotate(self, degrees):
-		(h, w) = self.image.shape[:2]
-		# calculate the center of the image
-		center = (w / 2, h / 2)
-		M = cv2.getRotationMatrix2D(center, degrees, 1)
+		(height, width) = self.image.shape[:2]
+		center = (height / 2, width / 2)
+		rotationMatrix = cv2.getRotationMatrix2D(center, degrees, scale=1)
+		self.image = cv2.warpAffine(self.image, rotationMatrix, (width, height))
 
-		self.image = cv2.warpAffine(self.image, M, (w, h))
-
-	def __init__(self, image):
-		self.image = image
+	def __init__(self, image=None, path=None):
+		if (path):
+			self.image = cv2.imread(path, 0)
+		else:
+			self.image = image
