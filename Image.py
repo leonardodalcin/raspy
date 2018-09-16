@@ -9,6 +9,8 @@ class Image:
 	def show(self):
 		plt.imshow(self.image, cmap="gray", interpolation='bicubic')
 		plt.show()
+		return self
+
 
 	def save(self):
 		print("Saving photo")
@@ -18,6 +20,8 @@ class Image:
 		if not os.path.exists(dirName):
 			os.makedirs(dirName)
 		cv2.imwrite(dirName + "/" + fileName + ".png", self.image)
+		return self
+
 
 	def threshold(self):
 		return cv2.adaptiveThreshold(self.image, 200,
@@ -31,6 +35,7 @@ class Image:
 		center = (height / 2, width / 2)
 		rotationMatrix = cv2.getRotationMatrix2D(center, degrees, scale=1)
 		self.image = cv2.warpAffine(self.image, rotationMatrix, (width, height))
+		return self
 
 	def __init__(self, image=None, path=None):
 		if (path):
