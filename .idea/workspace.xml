@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c1e2ffac-dd60-49c8-aad8-97da1108f1dc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/environmentSetup.sh" beforeDir="false" afterPath="$PROJECT_DIR$/environmentSetup.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/repl.py" beforeDir="false" afterPath="$PROJECT_DIR$/repl.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,14 +40,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="1249" />
+          <entry key="py" value="1266" />
           <entry key="sh" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="1249" />
+          <entry key="Python" value="1266" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -97,8 +96,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/repl.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="20" selection-start-line="15" selection-start-column="10" selection-end-line="16" selection-end-column="20" />
+            <state relative-caret-position="255">
+              <caret line="17" column="17" selection-start-line="16" selection-start-column="6" selection-end-line="17" selection-end-column="17" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -373,7 +372,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2639485" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -385,7 +384,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.25903615" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.25903615" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32891566" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32969698" />
@@ -494,8 +493,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/repl.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="20" selection-start-line="15" selection-start-column="10" selection-end-line="16" selection-end-column="20" />
+        <state relative-caret-position="255">
+          <caret line="17" column="17" selection-start-line="16" selection-start-column="6" selection-end-line="17" selection-end-column="17" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>

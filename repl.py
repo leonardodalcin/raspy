@@ -14,8 +14,8 @@ def takePhoto():
 	img = Image(Camera.takePhoto()).rotate(90)
 	img.show()
 
-# sumitomoInput = Input(24, "Sumitomo", takePhoto)
-# clockTestOutput = OutputClock(25, "Fake Signal", 0.1)
+sumitomoInput = Input(24, "Sumitomo", takePhoto)
+clockTestOutput = OutputClock(25, "Fake Signal", 0.1)
 
 
 def repl(IO, Camera, takePhoto):
