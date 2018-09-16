@@ -9,18 +9,19 @@ print("Beholder v0.0.1")
 IO = IO()
 Camera = Camera()
 
-def takePhoto(channel):
-    print("CALLING CALLBACK FUNCTION SINCE BUTTON IS PRESSED CHANNEL " + str(channel))
-    Image(Camera.takePhoto()).rotate(90).save()
 
+def takePhoto():
+	img = Image(Camera.takePhoto()).rotate(90)
+	img.show()
 
+# sumitomoInput = Input(24, "Sumitomo", takePhoto)
+# clockTestOutput = OutputClock(25, "Fake Signal", 0.1)
 
-sumitomoInput= Input(24, "Sumitomo", takePhoto)
-clockTestOutput= OutputClock(25, "Fake Signal", 0.1)
 
 def repl(IO, Camera, takePhoto):
-    code.interact(
-        local=locals(),
-    )
+	code.interact(
+		local=locals(),
+	)
+
 
 repl(IO, Camera, takePhoto)
