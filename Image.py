@@ -20,6 +20,13 @@ class Image:
 									 thresholdType=cv2.THRESH_BINARY,
 									 blockSize=51,
 									 C=0)
+	def rotate(self, degrees):
+		(h, w) = self.image.shape[:2]
+		# calculate the center of the image
+		center = (w / 2, h / 2)
+		M = cv2.getRotationMatrix2D(center, degrees, 1)
+
+		self.image = cv2.warpAffine(self.image, M, (w, h))
 
 	def __init__(self, image):
 		self.image = image

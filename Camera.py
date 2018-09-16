@@ -36,7 +36,6 @@ class Camera:
 		else:
 			print("Setting PiCamera wrapper")
 			self.piCamera = PiCamera()
-			self.piCamera.rotation = 180
 			Camera.__instance = self
 
 

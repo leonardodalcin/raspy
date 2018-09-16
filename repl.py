@@ -11,7 +11,7 @@ Camera = Camera()
 
 def takePhoto(channel):
     print("CALLING CALLBACK FUNCTION SINCE BUTTON IS PRESSED CHANNEL " + str(channel))
-    Image(Camera.takePhoto()).save()
+    Image(Camera.takePhoto()).rotate(90).save()
 
 
 
