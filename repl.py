@@ -12,7 +12,7 @@ Camera = Camera()
 
 def takePhoto():
 	img = Image(Camera.takePhoto())
-	img.rotate(90)
+	# img.rotate(90)
 	img.save()
 
 sumitomoInput = Input(24, "Sumitomo", takePhoto)
