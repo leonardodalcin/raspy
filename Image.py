@@ -34,7 +34,7 @@ class Image:
 		(height, width) = self.image.shape[:2]
 		center = (height / 2, width / 2)
 		rotationMatrix = cv2.getRotationMatrix2D(center, degrees, scale=1)
-		self.image = cv2.warpAffine(self.image, rotationMatrix, (width, height))
+		self.image = cv2.warpAffine(self.image, rotationMatrix, (height, width))
 		return self
 
 	def __init__(self, image=None, path=None):
