@@ -36,7 +36,9 @@ class Camera:
 		else:
 			print("Setting PiCamera wrapper")
 			self.piCamera = PiCamera()
+			self.piCamera.resolution = self.piCamera.MAX_RESOLUTION
 			Camera.__instance = self
+
 
 
 
